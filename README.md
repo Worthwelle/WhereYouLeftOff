@@ -12,13 +12,15 @@ This includes small chapter reviews, "when we last left our heroes" and "what ha
 
 ## Writing a good review
 
-As anything else, writing a good and useful review is an art form. It is important to remember that **Where You Left Off** is not intended as a place to share *opinions* regarding a work, but a review of what has happened.
+As anything else, writing a good and useful review is an art form. It is important to remember that **Where You Left Off** is not intended as a place to share *opinions* regarding a work, but a *review* of what has happened.
 
-Generally, this means that a review should focus on the actions and emotions presented in the book without offering deeper interpretation of the work. A review should be in short form and should not take much effort to peruse, therefore plagiarizing is unhelpful and undesirable.
+Therefore, a review should focus on the actions and emotions presented in the book without offering deeper interpretation of the work. It should be in short form and should not take much effort to peruse so that the user can get back into reading quickly. Plagiarizing the work itself is unhelpful and undesirable as it generally does not fit into this format.
 
 There are two different forms of reviews that are likely to be sought out by a user: general and targeted.
 
-A **targeted** review is one that specifically targets the next chapter or section of the plot. This type of review points out events or facts that may have happened far back in the story but will be referenced again shortly.
+A **targeted** review is one that specifically targets the next chapter or section of the plot. This type of review points out events or facts that may have happened far back in the story but will be referenced again shortly. Great examples of this exist in the pre-episode reviews seen in some long running television shows.
+
+Targeted reviews are possibly best written immediately after reading a particular chapter or before reading the chapter during a subsequent read-through of the work, and would include anything that needed to be re-referenced to understand the events contained within it.
 
 A **general** review is one that gives an overview of only the recent events or facts. This type of review may be written by the user themselves with no foresight into the forthcoming story to serve as a simple reminder.
 
@@ -30,7 +32,7 @@ If a user has a good memory or has recently left the story, it is generally only
 
 ##Development
 
-The latest version can be found at [https://github.com/Worthwelle/WhereYouLeftOff](https://github.com/Worthwelle/WhereYouLeftOff)
+The latest version can be found on [GitHub](https://github.com/Worthwelle/WhereYouLeftOff).
 
 ##Documentation
 
