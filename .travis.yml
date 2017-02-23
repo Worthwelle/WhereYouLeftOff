@@ -4,6 +4,15 @@ php:
   - 5.6
 
 before_script:
+  - mkdir bootstrap/cache
+  - mkdir storage
+  - mkdir storage/app
+  - mkdir storage/framework
+  - mkdir storage/framework/sessions
+  - mkdir storage/framework/cache
+  - mkdir storage/framework/views
+  - mkdir storage/logs
+  - chmod 777 -R storage
   - php -r "copy('.env.travis', '.env');"
   - mysql -e 'create database homestead_test;'
   - composer self-update
