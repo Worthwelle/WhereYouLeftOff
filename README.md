@@ -39,11 +39,22 @@ The latest version can be found on [GitHub](https://github.com/Worthwelle/WhereY
 ### Milestones
 
 #### Alpha
+
+It should be assumed that upgrading from one alpha version to a new alpha version will break the database.
+
 **0.1** - A functioning API implementing the features that will be the foundation of the software.
 
 **0.2** - A simple HTML5 web interface to use the existing foundation features.
 
 **0.3** - An enhanced HTML5 web interface utilizing AngularJS to add fluidity to existing features.
+
+**0.4** - Introduce administrator and moderator roles in API and web. (Mostly behind the scenes.)
+
+#### Beta
+
+Current beta code will be hosted live for testing, but will not be available on the [official website](http://whereyouleftoff.com/).
+
+**0.5+**
 
 ## Documentation
 
