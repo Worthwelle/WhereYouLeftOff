@@ -2,7 +2,7 @@
 
 <a href="https://travis-ci.org/Worthwelle/WhereYouLeftOff"><img src="https://travis-ci.org/Worthwelle/WhereYouLeftOff.svg" alt="Build Status"></a>
 
-##What is it?
+## What is it?
 
 **Where You Left Off** is a website backend and frontend developed on Laravel and AngularJS. It is intended to work as a reminder service for various forms of media, primarily focusing on books and video games.
 
@@ -26,22 +26,31 @@ Targeted reviews are possibly best written immediately after reading a particula
 
 A **general** review is one that gives an overview of only the recent events or facts. This type of review may be written by the user themselves with no foresight into the forthcoming story to serve as a simple reminder.
 
-###When last we left our heroes
+### When last we left our heroes
 
 If a user has a good memory or has recently left the story, it is generally only necessary to get a small reminder of the last thing that happened. Such a review should focus on the most recent storyline and any storyline(s) that may have recently preceded it.
 
 **For example:** The previous chapter followed Susan's adventures through the mystical forest. Half way through the chapter, the plot shifted to Greg's on-going relationship conflict. A good short review would include a summary of the last things the chapter had to say about both Susan and Greg, not just Greg or Susan individually.
 
-##Development
+## Development
 
 The latest version can be found on [GitHub](https://github.com/Worthwelle/WhereYouLeftOff).
 
-##Documentation
+### Milestones
+
+#### Alpha
+**0.1** - A functioning API implementing the features that will be the foundation of the software.
+
+**0.2** - A simple HTML5 web interface to use the existing foundation features.
+
+**0.3** - An enhanced HTML5 web interface utilizing AngularJS to add fluidity to existing features.
+
+## Documentation
 
 Documentation will, eventually, be available in the development repository.
 
-##Licensing
+## Licensing
 
 Please see the file called LICENSE.md
 
-##Bug Reporting
+## Bug Reporting
