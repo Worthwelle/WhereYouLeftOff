@@ -1,5 +1,7 @@
 # WhereYouLeftOff
 
+<a href="https://travis-ci.org/Worthwelle/WhereYouLeftOff"><img src="https://travis-ci.org/Worthwelle/WhereYouLeftOff.svg" alt="Build Status"></a>
+
 ##What is it?
 
 **Where You Left Off** is a website backend and frontend developed on Laravel and AngularJS. It is intended to work as a reminder service for various forms of media, primarily focusing on books and video games.
@@ -8,7 +10,7 @@ With busy lives, it can be difficult sometimes to remember where one left off on
 
 **Where You Left Off** seeks to solve this problem by allowing a user to get a quick (or thorough) reminder of where things left off in a particular media plot line.
 
-This includes small chapter reviews, "when we last left our heroes" and "what has happened so far" summaries. Great examples of this are already used in television where episode of long-running series are preceded with topical reviews of the history of the show.
+This includes small chapter reviews, "when we last left our heroes" and "what has happened so far" summaries. Great examples of this are already used in television where episodes of long-running series are preceded with topical reviews of the history of the show.
 
 ## Writing a good review
 
