@@ -21,5 +21,6 @@ Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
             'state' => 'GOOD'
         ]);
     });
+    Route::resource('series', 'SeriesController');
     Route::resource('medium', 'MediaController');
 });
