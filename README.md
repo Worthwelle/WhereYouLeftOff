@@ -1,6 +1,4 @@
-# WhereYouLeftOff
-
-<a href="https://travis-ci.org/Worthwelle/WhereYouLeftOff"><img src="https://travis-ci.org/Worthwelle/WhereYouLeftOff.svg" alt="Build Status"></a>
+# WhereYouLeftOff <a href="https://travis-ci.org/Worthwelle/WhereYouLeftOff"><img src="https://travis-ci.org/Worthwelle/WhereYouLeftOff.svg" alt="Build Status"></a>
 
 ## What is it?
 

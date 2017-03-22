@@ -14,11 +14,10 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
-    Route::get('/status', function() {
+    Route::get('/version', function() {
         return response()->json([
             'app' => config('app.name'),
-            'version' => '1.0',
-            'state' => 'GOOD'
+            'version' => env('app.version'),
         ]);
     });
     Route::resource('series', 'SeriesController');
