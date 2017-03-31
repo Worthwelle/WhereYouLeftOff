@@ -17,9 +17,10 @@ Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
     Route::get('/version', function() {
         return response()->json([
             'app' => config('app.name'),
-            'version' => env('app.version'),
+            'version' => config('app.version'),
         ]);
     });
     Route::resource('series', 'SeriesController');
     Route::resource('medium', 'MediaController');
+    Route::resource('resource', 'ResourceController');
 });
