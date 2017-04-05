@@ -25,4 +25,5 @@ Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
     Route::resource('resource', 'ResourceController');
     Route::resource('creator', 'CreatorController');
     Route::resource('creator_title', 'CreatorTitleController');
+    Route::resource('chapter_set', 'ChapterSetController');
 });
