@@ -5,7 +5,7 @@ namespace WhereYouLeftOff\Http\Controllers;
 use WhereYouLeftOff\Medium;
 use Illuminate\Http\Request;
 
-class MediaController extends Controller
+class MediumController extends Controller
 {
     /**
      * Display a listing of the resource.
