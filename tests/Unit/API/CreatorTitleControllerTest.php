@@ -9,7 +9,7 @@ class CreatorTitleTest extends TestCase
 {
     
     /**
-     * Insert a media item without a custom slug.
+     * Insert a creator title without a custom slug.
      *
      * @return void
      */
@@ -23,7 +23,7 @@ class CreatorTitleTest extends TestCase
     }
     
     /**
-     * Retrieve a media item.
+     * Retrieve a creator title.
      *
      * @depends testInsertCreatorTitle
      * @return void
@@ -38,7 +38,7 @@ class CreatorTitleTest extends TestCase
     }
     
     /**
-     * Update a media item.
+     * Update a creator title.
      *
      * @depends testInsertCreatorTitle
      * @return void
@@ -54,7 +54,7 @@ class CreatorTitleTest extends TestCase
     }
     
     /**
-     * Update a non-existant media item.
+     * Update a non-existant creator title.
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class CreatorTitleTest extends TestCase
     }
     
     /**
-     * Delete a media item
+     * Delete a creator title
      * 
      * @depends testShowCreatorTitle
      * @return void
