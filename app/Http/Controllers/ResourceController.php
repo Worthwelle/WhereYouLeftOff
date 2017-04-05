@@ -36,7 +36,7 @@ class ResourceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'medium' => 'required',
+            'medium_id' => 'required',
             'title' => 'required'
         ]);
         

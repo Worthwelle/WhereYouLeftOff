@@ -19,14 +19,16 @@ class ResourceControllerTest extends TestCase
     {
         $series = new Series(['title' => 'ResourceSeries']);
         $series->save();
+        $medium = new Medium(['name' => 'ResourceMedium']);
+        $medium->save();
         $id = Medium::where('slug','book')->firstOrFail()->id;
-        $this->post('/api/v1/resource', ['title' => 'ResourceWithSeries', 'medium' => $id, 'series' => $series->id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
+        $this->post('/api/v1/resource', ['title' => 'ResourceWithSeries', 'medium_id' => $medium->id, 'series_id' => $series->id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
              ->assertJson([
                  'title' => 'ResourceWithSeries',
-                 'medium' => $id,
-                 'series' => $series->id
+                 'medium_id' => $medium->id,
+                 'series_id' => $series->id
              ]);
-        $this->assertDatabaseHas('resources', ['title' => 'ResourceWithSeries', 'medium' => $id, 'series' => $series->id]);
+        $this->assertDatabaseHas('resources', ['title' => 'ResourceWithSeries', 'medium_id' => $medium->id, 'series_id' => $series->id]);
     }
     
     /**
@@ -51,13 +53,14 @@ class ResourceControllerTest extends TestCase
      */
     public function testInsertResourceWithoutSeries()
     {
-        $id = Medium::where('slug','book')->firstOrFail()->id;
-        $this->post('/api/v1/resource', ['title' => 'ResourceWithSeries', 'medium' => $id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
+        $medium = new Medium(['name' => 'ResourceMedium2']);
+        $medium->save();
+        $this->post('/api/v1/resource', ['title' => 'ResourceWithOutSeries', 'medium_id' => $medium->id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
              ->assertJson([
-                 'title' => 'ResourceWithSeries',
-                 'medium' => $id
+                 'title' => 'ResourceWithOutSeries',
+                 'medium_id' => $medium->id
              ]);
-        $this->assertDatabaseHas('resources', ['title' => 'ResourceWithSeries', 'medium' => $id]);
+        $this->assertDatabaseHas('resources', ['title' => 'ResourceWithOutSeries', 'medium_id' => $medium->id]);
     }
     
     /**
