@@ -5,7 +5,7 @@ namespace Tests\Unit\API;
 use Tests\TestCase;
 use WhereYouLeftOff\Medium;
 
-class MediaTest extends TestCase
+class MediumTest extends TestCase
 {
     
     /**
