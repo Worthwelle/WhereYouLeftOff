@@ -16,8 +16,9 @@ class CreateEditionsTable extends Migration
         Schema::create('editions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('chapter_set');
-            $table->integer('format_id');
+            $table->integer('resource_id')->unsigned();
+            $table->integer('chapter_set_id')->unsigned();
+            $table->integer('format_id')->unsigned();
             $table->text('keys'); //transfer to json
             $table->timestamps();
         });

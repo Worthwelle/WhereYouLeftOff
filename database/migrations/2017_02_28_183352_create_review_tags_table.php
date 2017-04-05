@@ -15,8 +15,8 @@ class CreateReviewTagsTable extends Migration
     {
         Schema::create('review_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('review_id');
-            $table->integer('tag_id');
+            $table->integer('review_id')->unsigned();
+            $table->integer('tag_id')->unsigned();
             $table->timestamps();
         });
     }

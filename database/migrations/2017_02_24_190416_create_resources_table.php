@@ -16,8 +16,8 @@ class CreateResourcesTable extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('series')->nullable();
-            $table->integer('medium');
+            $table->integer('series_id')->unsigned()->nullable();
+            $table->integer('medium_id')->unsigned();
             $table->timestamps();
         });
     }
