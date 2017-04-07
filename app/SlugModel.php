@@ -5,40 +5,26 @@ namespace WhereYouLeftOff;
 use Illuminate\Database\Eloquent\Model;
 
 class SlugModel extends Model
-{
+{   
     /**
-     * Override the constructor to create default slugs.
-     * 
-     * @param type $attributes
-     */
-    function __construct($attributes = array())
-    {
-        parent::__construct($attributes);
-
-        $this->cleanSlug();
-    }
-    
-    /**
-     * Force the slug to be lowercase. If no slug is specified,
-     * use the name field by default.
+     * Force the slug to be lowercase and remove spaces. If no slug is
+     * specified, use the name field by default.
      * 
      * @return string
      */
     protected function cleanSlug() {
         if( $this->slug == '' ) {
-            $this->slug = strtolower($this->name);
+            $this->slug = $this->name;
         }
-        else {
-            $this->slug = strtolower($this->slug);
-        }
+        $this->slug = strtolower($this->slug);
+        $this->slug = str_replace(' ', '_', $this->slug);
     }
     
     /**
-     * Override the save function to verify a name is present and to force a
-     * lowercase slug.
+     * Override the save function to verify a name is present and to clean the
+     * slug.
      * 
      * @todo remove special characters from slugs
-     * @todo split into SlugModel class
      * 
      * @param array $options
      */

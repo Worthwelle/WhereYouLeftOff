@@ -2,7 +2,7 @@
 
 namespace WhereYouLeftOff;
 
-use Illuminate\Database\Eloquent\Model;
+use WhereYouLeftOff\SlugModel;
 
 class Format extends SlugModel
 {
