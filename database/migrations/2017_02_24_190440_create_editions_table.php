@@ -19,7 +19,7 @@ class CreateEditionsTable extends Migration
             $table->integer('resource_id')->unsigned();
             $table->integer('chapter_set_id')->unsigned();
             $table->integer('format_id')->unsigned();
-            $table->text('keys'); //transfer to json
+            $table->text('keys')->nullable();
             $table->timestamps();
         });
     }
