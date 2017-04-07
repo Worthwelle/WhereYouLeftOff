@@ -10,7 +10,7 @@ use WhereYouLeftOff\Resource;
 class ResourceControllerTest extends TestCase
 {
     /**
-     * Insert a series item with a description.
+     * Insert a resource with a description.
      *
      * @todo add a series
      * @return void
@@ -32,7 +32,7 @@ class ResourceControllerTest extends TestCase
     }
     
     /**
-     * Retrieve a series item.
+     * Retrieve a resource.
      *
      * @depends testInsertResourceWithSeries
      * @return void
@@ -47,7 +47,7 @@ class ResourceControllerTest extends TestCase
     }
     
     /**
-     * Insert a series item without a description.
+     * Insert a resource without a description.
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class ResourceControllerTest extends TestCase
     }
     
     /**
-     * Update a series item.
+     * Update a resource.
      *
      * @depends testInsertResourceWithSeries
      * @return void
@@ -77,5 +77,17 @@ class ResourceControllerTest extends TestCase
                  'title' => 'UpdatedResource',
              ]);
         $this->assertDatabaseHas('resources', ['id' => $id, 'title' => 'UpdatedResource']);
+    }
+    
+    /**
+     * Delete a resource.
+     * 
+     * @depends testShowResource
+     * @return void
+     */
+    public function testRemoveResource() {
+        $id = Resource::where('title','UpdatedResource')->firstOrFail()->id;
+        $this->delete('/api/v1/resource/'.$id, ['HTTP_X-Requested-With' => 'XMLHttpRequest']);
+        $this->assertDatabaseMissing('resources', ['id' => $id]);
     }
 }
