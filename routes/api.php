@@ -29,4 +29,5 @@ Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
     Route::resource('format', 'FormatController');
     Route::resource('edition', 'EditionController');
     Route::resource('review', 'ReviewController');
+    Route::resource('resource_creator', 'ResourceCreatorController');
 });
