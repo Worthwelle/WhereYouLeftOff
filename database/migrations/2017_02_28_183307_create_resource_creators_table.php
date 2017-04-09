@@ -15,7 +15,7 @@ class CreateResourceCreatorsTable extends Migration
     {
         Schema::create('resource_creators', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('resource_id')->unsigned();
+            $table->integer('edition_id')->unsigned();
             $table->integer('creator_id')->unsigned();
             $table->integer('creator_title_id')->unsigned();
             $table->timestamps();

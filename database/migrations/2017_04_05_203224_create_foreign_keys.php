@@ -14,26 +14,26 @@ class CreateForeignKeys extends Migration
     public function up()
     {
         Schema::table('resources', function (Blueprint $table) {
-            $table->foreign('series_id')->references('id')->on('series');
-            $table->foreign('medium_id')->references('id')->on('media');
+            $table->foreign('series_id')->references('id')->on('series')->onDelete('cascade');
+            $table->foreign('medium_id')->references('id')->on('media')->onDelete('cascade');
         });
         Schema::table('editions', function (Blueprint $table) {
-            $table->foreign('resource_id')->references('id')->on('resources');
-            $table->foreign('chapter_set_id')->references('id')->on('chapter_sets');
-            $table->foreign('format_id')->references('id')->on('formats');
+            $table->foreign('resource_id')->references('id')->on('resources')->onDelete('cascade');
+            $table->foreign('chapter_set_id')->references('id')->on('chapter_sets')->onDelete('cascade');
+            $table->foreign('format_id')->references('id')->on('formats')->onDelete('cascade');
         });
         Schema::table('reviews', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('edition_id')->references('id')->on('editions');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('edition_id')->references('id')->on('editions')->onDelete('cascade');
         });
         Schema::table('resource_creators', function (Blueprint $table) {
-            $table->foreign('resource_id')->references('id')->on('resources');
-            $table->foreign('creator_id')->references('id')->on('creators');
-            $table->foreign('creator_title_id')->references('id')->on('creator_titles');
+            $table->foreign('edition_id')->references('id')->on('editions')->onDelete('cascade');
+            $table->foreign('creator_id')->references('id')->on('creators')->onDelete('cascade');
+            $table->foreign('creator_title_id')->references('id')->on('creator_titles')->onDelete('cascade');
         });
         Schema::table('review_tags', function (Blueprint $table) {
-            $table->foreign('review_id')->references('id')->on('reviews');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->foreign('review_id')->references('id')->on('reviews')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
@@ -51,7 +51,7 @@ class CreateForeignKeys extends Migration
         Schema::table('resource_creators', function (Blueprint $table) {
             $table->dropForeign('resource_creators_creator_title_id_foreign');
             $table->dropForeign('resource_creators_creator_id_foreign');
-            $table->dropForeign('resource_creators_resource_id_foreign');
+            $table->dropForeign('resource_creators_edition_id_foreign');
         });
         Schema::table('reviews', function (Blueprint $table) {
             $table->dropForeign('reviews_edition_id_foreign');
