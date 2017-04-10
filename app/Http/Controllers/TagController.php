@@ -3,9 +3,9 @@
 namespace WhereYouLeftOff\Http\Controllers;
 
 use Illuminate\Http\Request;
-use WhereYouLeftOff\Review;
+use WhereYouLeftOff\Tag;
 
-class ReviewController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,15 +36,13 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'user_id' => 'required',
-            'edition_id' => 'required',
-            'content' => 'required'
+            'name' => 'required'
         ]);
         
         $data = $request->all();
-        $review = new Review($data);
-        $review->save();
-        return $review;
+        $tag = new Tag($data);
+        $tag->save();
+        return $tag;
     }
 
     /**
@@ -55,8 +53,8 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        $review = Review::findOrFail($id);
-        return $review;
+        $tag = Tag::findOrFail($id);
+        return $tag;
     }
 
     /**
@@ -79,14 +77,14 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $review = Review::find($id);
-        if( !$review ) {
+        $tag = Tag::find($id);
+        if( !$tag ) {
             return ['error' => '404'];
         }
         $data = $request->all();
-        $review->fill($data);
-        $review->save();
-        return $review;
+        $tag->fill($data);
+        $tag->save();
+        return $tag;
     }
 
     /**
@@ -97,10 +95,10 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        $review = Review::find($id);
-        if( !$review ) {
+        $tag = Tag::find($id);
+        if( !$tag ) {
             return ['error' => '404'];
         }
-        $review->delete();
+        $tag->delete();
     }
 }

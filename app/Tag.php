@@ -2,9 +2,9 @@
 
 namespace WhereYouLeftOff;
 
-use Illuminate\Database\Eloquent\Model;
+use WhereYouLeftOff\SlugModel;
 
-class Tag extends Model
+class Tag extends SlugModel
 {
-    //
+    protected $fillable = ['slug', 'name'];
 }

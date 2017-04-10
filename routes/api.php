@@ -30,4 +30,6 @@ Route::group(['middleware' => ['api'], 'prefix' => '/v1'], function () {
     Route::resource('edition', 'EditionController');
     Route::resource('review', 'ReviewController');
     Route::resource('resource_creator', 'ResourceCreatorController');
+    Route::resource('tag', 'TagController');
+    Route::resource('review_tag', 'ReviewTagController');
 });

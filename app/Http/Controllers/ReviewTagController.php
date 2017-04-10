@@ -3,9 +3,9 @@
 namespace WhereYouLeftOff\Http\Controllers;
 
 use Illuminate\Http\Request;
-use WhereYouLeftOff\Review;
+use WhereYouLeftOff\ReviewTag;
 
-class ReviewController extends Controller
+class ReviewTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,15 +36,14 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'user_id' => 'required',
-            'edition_id' => 'required',
-            'content' => 'required'
+            'review_id' => 'required',
+            'tag_id' => 'required'
         ]);
         
         $data = $request->all();
-        $review = new Review($data);
-        $review->save();
-        return $review;
+        $review_tag = new ReviewTag($data);
+        $review_tag->save();
+        return $review_tag;
     }
 
     /**
@@ -55,8 +54,8 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        $review = Review::findOrFail($id);
-        return $review;
+        $review_tag = ReviewTag::findOrFail($id);
+        return $review_tag;
     }
 
     /**
@@ -79,14 +78,14 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $review = Review::find($id);
-        if( !$review ) {
+        $review_tag = ReviewTag::find($id);
+        if( !$review_tag ) {
             return ['error' => '404'];
         }
         $data = $request->all();
-        $review->fill($data);
-        $review->save();
-        return $review;
+        $review_tag->fill($data);
+        $review_tag->save();
+        return $review_tag;
     }
 
     /**
@@ -97,10 +96,10 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        $review = Review::find($id);
-        if( !$review ) {
+        $review_tag = ReviewTag::find($id);
+        if( !$review_tag ) {
             return ['error' => '404'];
         }
-        $review->delete();
+        $review_tag->delete();
     }
 }
