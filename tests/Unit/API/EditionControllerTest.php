@@ -19,18 +19,11 @@ class EditionControllerTest extends TestCase
      */
     public function testInsertEditionWithKeys()
     {
-        $series = new Series(['title' => 'EditionResourceSeries']);
-        $series->save();
-        $medium = new Medium(['name' => 'EditionResourceMedium']);
-        $medium->save();
-        $resource = new Resource(['title' => 'EditionResource', 'series_id' => $series->id, 'medium_id' => $medium->id]);
-        $resource->save();
-        
-        $chapter_set = new ChapterSet(['chapters' => [1 => 'EditionChapterSet Chapter1', 2 => 'EditionChapterSet Chapter2']]);
-        $chapter_set->save();
-        
-        $format = new Format(['name' => 'EditionFormat']);
-        $format->save();
+        $series = Series::create(['title' => 'EditionResourceSeries']);
+        $medium = Medium::create(['name' => 'EditionResourceMedium']);
+        $resource = Resource::create(['title' => 'EditionResource', 'series_id' => $series->id, 'medium_id' => $medium->id]);
+        $chapter_set = ChapterSet::create(['chapters' => [1 => 'EditionChapterSet Chapter1', 2 => 'EditionChapterSet Chapter2']]);
+        $format = Format::create(['name' => 'EditionFormat']);
         
         $payload = [
             'title' => 'Edition With Keys',

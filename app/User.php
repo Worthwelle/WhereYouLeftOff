@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the reviews belonging to this user.
+     */
+    public function reviews()
+    {
+        return $this->hasMany('WhereYouLeftOff\Review');
+    }
 }

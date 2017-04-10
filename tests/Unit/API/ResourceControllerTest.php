@@ -17,11 +17,9 @@ class ResourceControllerTest extends TestCase
      */
     public function testInsertResourceWithSeries()
     {
-        $series = new Series(['title' => 'ResourceSeries']);
-        $series->save();
-        $medium = new Medium(['name' => 'ResourceMedium']);
-        $medium->save();
-        $id = Medium::where('slug','book')->firstOrFail()->id;
+        $series = Series::create(['title' => 'ResourceSeries']);
+        $medium = Medium::create(['name' => 'ResourceMedium']);
+        
         $this->post('/api/v1/resource', ['title' => 'ResourceWithSeries', 'medium_id' => $medium->id, 'series_id' => $series->id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
              ->assertJson([
                  'title' => 'ResourceWithSeries',
@@ -53,8 +51,7 @@ class ResourceControllerTest extends TestCase
      */
     public function testInsertResourceWithoutSeries()
     {
-        $medium = new Medium(['name' => 'ResourceMedium2']);
-        $medium->save();
+        $medium = Medium::create(['name' => 'ResourceMedium2']);
         $this->post('/api/v1/resource', ['title' => 'ResourceWithOutSeries', 'medium_id' => $medium->id], ['HTTP_X-Requested-With' => 'XMLHttpRequest'])
              ->assertJson([
                  'title' => 'ResourceWithOutSeries',

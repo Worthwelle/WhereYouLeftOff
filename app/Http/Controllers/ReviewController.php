@@ -84,7 +84,9 @@ class ReviewController extends Controller
             return ['error' => '404'];
         }
         $data = $request->all();
+        $user = $review->user_id;
         $review->fill($data);
+        $review->user_id = $user;
         $review->save();
         return $review;
     }
